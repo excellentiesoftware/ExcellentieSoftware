@@ -17,7 +17,60 @@ namespace SISAGRO
         {
 
 
-            oCheck.cTableName = "cad_propriedade";
+            oCheck.cTableName = "cad_grupo_propriedades";
+            oCheck.cComentario = "Grupo dos Espações da Propriedas";
+            oCheck.cSchema = "public";
+
+            oCheck.AddCampo("grppro_id", "serial", 0, 0, "Id Primario", false, "");
+            oCheck.AddCampo("grppro_nome", "varchar", 100, 0, "Razao Social", false, "");
+            oCheck.AddCampo("grppro_ativo", "boolean", 0, 0, "Ativo", false, "true");
+            
+            oCheck.addindice("ind_grppro_01", "upper(grppro_nome)", true);
+
+            oCheck.Run();
+
+
+
+            oCheck.cTableName = "cad_usuario";
+            oCheck.cComentario = "Cadastro de Usuario do Grupo Propriedades";
+            oCheck.cSchema = "public";
+
+            oCheck.AddCampo("usu_id", "serial", 0, 0, "Id Primario", false, "");
+            oCheck.AddCampo("grppro_id", "integer", 0, 0, "Id Grupo Propriedade", false, "");
+            oCheck.AddCampo("grpace_id", "integer", 0, 0, "Id Grupo Acesso", false, "");
+            oCheck.AddCampo("usu_nome", "varchar", 100, 0, "Nome do Usuario", false, "");
+            oCheck.AddCampo("usu_login", "varchar", 100, 0, "Login do Usuario", false, "");
+            oCheck.AddCampo("usu_email", "varchar", 100, 0, "Email", false, "");
+            oCheck.AddCampo("usu_senha", "varchar", 100, 0, "Senha", false, "");
+            oCheck.AddCampo("usu_ativo", "boolean", 0, 0, "Ativo:", false, "true");
+            oCheck.AddCampo("usu_foto", "bytea", 0, 0, "Foto", false, "");
+            oCheck.AddCampo("usu_celular", "varchar", 30, 0, "celular", false, "");
+            oCheck.AddCampo("usu_telefone_fixo", "varchar", 30, 0, "Telefone", false, "");
+            oCheck.AddCampo("usu_numero_cpf", "varchar", 18, 0, "Cpf", false, "");
+            oCheck.AddCampo("usu_tipo_genero", "char", 1, 0, "Sexo", false, "");
+
+            oCheck.addindice("ind_usu_01", "grppro_id,upper(usu_login)", true);
+            oCheck.addindice("ind_usu_02", "grppro_id");
+
+            oCheck.Run();
+
+
+            oCheck.cTableName = "cad_cidade";
+            oCheck.cComentario = "Cadastro das Cidades";
+            oCheck.cSchema = "public";
+
+            oCheck.AddCampo("cid_id", "serial", 0, 0, "Id Primario", false, "");
+            oCheck.AddCampo("cid_nome", "varchar", 100, 0, "Nome da Cidade", false, "");
+            oCheck.AddCampo("cid_uf", "char", 2, 0, "Sigla do Estado", false, "");
+            oCheck.AddCampo("cid_pais", "varchar", 5, 0, "Sigla do Pais", false, "");
+            oCheck.AddCampo("cid_coordenada", "point", 0, 0, "Coordenada geolocalizacao", false, "");
+            
+            oCheck.addindice("ind_cid_01", "upper(cid_nome),upper(cid_uf)", true);
+            
+            oCheck.Run();
+
+
+            /*oCheck.cTableName = "cad_propriedade";
             oCheck.cComentario = "Cadastr dos Clientes";
 
             oCheck.AddCampo("cad_id", "serial", 0, 0, "Id Primario", false, "");
@@ -42,7 +95,7 @@ namespace SISAGRO
 
             oCheck.Run();
 
-            
+            */
 
 
         }

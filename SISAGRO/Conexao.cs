@@ -7,7 +7,7 @@ namespace SISAGRO
     public class Conexao
     {
         //private static string strConexao = "Server=pgsql.excellentiesoftware.com.br;port=5432;User Id=excellentiesoftware;Password=exc91215709#;Database=excellentiesoftware";
-        private static string strConexao = "Server=descloc.c5mjqy33ximb.us-east-1.rds.amazonaws.com;port=5432;User Id=dbmasterdescloc;Password=gWmOwnKU34YnUfVaYRaK;Database=sisagro";
+        private static string strConexao = "Server=10.250.120.10;port=5444;User Id=postgres;Password=descloc#2021#;Database=sisagro";
         private static string strEsquema = "public.";
 
         private NpgsqlConnection conn;
