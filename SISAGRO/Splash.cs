@@ -69,6 +69,21 @@ namespace SISAGRO
             
             oCheck.Run();
 
+            oCheck.cTableName = "cad_cultura";
+            oCheck.cComentario = "Cadastro das Culturas";
+            oCheck.cSchema = "public";
+
+            oCheck.AddCampo("cul_id", "serial", 0, 0, "Id Primario", false, "");
+            oCheck.AddCampo("grppro_id", "integer", 0, 0, "Id GrupoPropriedade", false, "");
+            oCheck.AddCampo("cul_nome", "varchar", 100, 0, "Nome ", false, "");
+            oCheck.AddCampo("cul_complemento", "text", 0, 0, "Complemento", false, "");
+            oCheck.AddCampo("cul_foto", "bytea", 0, 0, "foto", false, "");
+            
+            oCheck.addindice("ind_cul_01", "grppro_id,upper(cul_nome)", true);
+
+            oCheck.Run();
+
+
 
             /*oCheck.cTableName = "cad_propriedade";
             oCheck.cComentario = "Cadastr dos Clientes";
