@@ -69,48 +69,33 @@ namespace SISAGRO
             
             oCheck.Run();
 
-            oCheck.cTableName = "cad_cultura";
-            oCheck.cComentario = "Cadastro das Culturas";
+            oCheck.cTableName = "cad_moeda";
+            oCheck.cComentario = "Cadastro das Moedas";
             oCheck.cSchema = "public";
 
-            oCheck.AddCampo("cul_id", "serial", 0, 0, "Id Primario", false, "");
-            oCheck.AddCampo("grppro_id", "integer", 0, 0, "Id GrupoPropriedade", false, "");
-            oCheck.AddCampo("cul_nome", "varchar", 100, 0, "Nome ", false, "");
-            oCheck.AddCampo("cul_complemento", "text", 0, 0, "Complemento", false, "");
-            oCheck.AddCampo("cul_foto", "bytea", 0, 0, "foto", false, "");
+            oCheck.AddCampo("moe_id", "serial", 0, 0, "Id Primario", false, "");
+            oCheck.AddCampo("moe_nome", "varchar", 100, 0, "Nome ", false, "");
+            oCheck.AddCampo("moe_sigla", "varchar", 5, 0, "Nome ", false, "");
             
-            oCheck.addindice("ind_cul_01", "grppro_id,upper(cul_nome)", true);
+            oCheck.addindice("ind_moe_01", "upper(moe_nome)", true);
 
             oCheck.Run();
 
 
+            oCheck.cTableName = "cad_indice";
+            oCheck.cComentario = "Lançamento dos Indices Moedas";
+            oCheck.cSchema = "public";
 
-            /*oCheck.cTableName = "cad_propriedade";
-            oCheck.cComentario = "Cadastr dos Clientes";
+            oCheck.AddCampo("ind_id", "serial", 0, 0, "Id Primario", false, "");
+            oCheck.AddCampo("ind_data", "date", 0, 0, "Data de Lancamento", false, "");
+            oCheck.AddCampo("ind_valor", "numeric", 12,5, "Valor Indice", false, "0");
+            oCheck.AddCampo("moe_id", "integer", 0, 0, "Id Moeda", false, "");
 
-            oCheck.AddCampo("cad_id", "serial", 0, 0, "Id Primario", false, "");
-            oCheck.AddCampo("cad_razao_social", "varchar", 100, 0, "Razao Social", false, "");
-            oCheck.AddCampo("cad_nome_fantasia", "varchar", 100, 0, "Nome Fantasia", false, "");
-            oCheck.AddCampo("cad_cnpj_cpf", "varchar", 18, 0, "CNPJ/CPF", false, "");
-            oCheck.AddCampo("cad_email", "varchar", 100, 0, "Email", false, "");
-            oCheck.AddCampo("cad_telefone", "varchar", 30, 0, "Telefone", false, "");
-            oCheck.AddCampo("cad_ativo", "boolean", 0, 0, "Ativo", false, "true");
-
-            oCheck.AddCampo("lgr_nome", "varchar", 100, 0, "Rua do Logradouro", false, "");
-            oCheck.AddCampo("end_numero", "varchar", 10, 0, "Numero", false, "");
-            oCheck.AddCampo("end_complemento", "varchar", 30, 0, "Complemento", false, "");
-            oCheck.AddCampo("cid_nome", "varchar", 40, 0, "Cidade", false, "");
-            oCheck.AddCampo("bai_nome", "varchar", 40, 0, "Bairro", false, "");
-            oCheck.AddCampo("uf_sigla", "varchar", 2, 0, "UF", false, "");
-
-
-            //oCheck.AddCampo("log_registro", "text", 0, 0, "Log Registro", false, "");
-
-            oCheck.addindice("ind_cad_01", "upper(cad_cnpj_cpf)", true);
+            oCheck.addindice("ind_ind_01", "moe_id,ind_data", true);
 
             oCheck.Run();
 
-            */
+
 
 
         }
