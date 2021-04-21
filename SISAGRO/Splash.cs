@@ -31,28 +31,6 @@ namespace SISAGRO
 
 
 
-            oCheck.cTableName = "cad_usuario";
-            oCheck.cComentario = "Cadastro de Usuario do Grupo Propriedades";
-            oCheck.cSchema = "public";
-
-            oCheck.AddCampo("usu_id", "serial", 0, 0, "Id Primario", false, "");
-            oCheck.AddCampo("grppro_id", "integer", 0, 0, "Id Grupo Propriedade", false, "");
-            oCheck.AddCampo("grpace_id", "integer", 0, 0, "Id Grupo Acesso", false, "");
-            oCheck.AddCampo("usu_nome", "varchar", 100, 0, "Nome do Usuario", false, "");
-            oCheck.AddCampo("usu_login", "varchar", 100, 0, "Login do Usuario", false, "");
-            oCheck.AddCampo("usu_email", "varchar", 100, 0, "Email", false, "");
-            oCheck.AddCampo("usu_senha", "varchar", 100, 0, "Senha", false, "");
-            oCheck.AddCampo("usu_ativo", "boolean", 0, 0, "Ativo:", false, "true");
-            oCheck.AddCampo("usu_foto", "bytea", 0, 0, "Foto", false, "");
-            oCheck.AddCampo("usu_celular", "varchar", 30, 0, "celular", false, "");
-            oCheck.AddCampo("usu_telefone_fixo", "varchar", 30, 0, "Telefone", false, "");
-            oCheck.AddCampo("usu_numero_cpf", "varchar", 18, 0, "Cpf", false, "");
-            oCheck.AddCampo("usu_tipo_genero", "char", 1, 0, "Sexo", false, "");
-
-            oCheck.addindice("ind_usu_01", "grppro_id,upper(usu_login)", true);
-            oCheck.addindice("ind_usu_02", "grppro_id");
-
-            oCheck.Run();
 
 
             oCheck.cTableName = "cad_cidade";
