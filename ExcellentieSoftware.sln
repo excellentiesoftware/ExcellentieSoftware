@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExcellentieSoftware", "ExcellentieSoftware\ExcellentieSoftware.csproj", "{2CF5E2A4-0C4A-40BB-B90B-127B7332A648}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SISAGRO", "SISAGRO\SISAGRO.csproj", "{49E2895E-9DC4-4121-831B-28280CE802BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SISAGRO", "SISAGRO\SISAGRO.csproj", "{49E2895E-9DC4-4121-831B-28280CE802BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagOnline", "PagOnline\PagOnline.csproj", "{BA827604-E6A0-4471-B995-02D0A103B89E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{49E2895E-9DC4-4121-831B-28280CE802BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49E2895E-9DC4-4121-831B-28280CE802BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49E2895E-9DC4-4121-831B-28280CE802BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA827604-E6A0-4471-B995-02D0A103B89E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA827604-E6A0-4471-B995-02D0A103B89E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA827604-E6A0-4471-B995-02D0A103B89E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA827604-E6A0-4471-B995-02D0A103B89E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
